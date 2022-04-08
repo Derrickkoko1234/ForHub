@@ -1,6 +1,7 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:forhub/onboarding/Onboarding.dart';
 
 class ToTheHubPage extends StatelessWidget {
   const ToTheHubPage({Key? key}) : super(key: key);
@@ -50,19 +51,30 @@ class ToTheHubPage extends StatelessWidget {
               right: 28.0,
               top: 30,
             ),
-            child: Row(
-              children: const [
-                Text(
-                  'Begin your journey',
-                  style: TextStyle(fontSize: 18),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8.0),
-                  child: Image(
-                    image: AssetImage('assets/images/vector.png'),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OnboardingPage(),
                   ),
-                ),
-              ],
+                );
+              },
+              child: Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  const Text(
+                    'Begin your journey',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: const Image(
+                      image: AssetImage('assets/images/vector.png'),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
