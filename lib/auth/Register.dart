@@ -1,16 +1,18 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:forhub/auth/Google_auth.dart';
-import 'package:forhub/auth/Register.dart';
+import 'package:forhub/auth/Login.dart';
 import 'package:forhub/home/Home.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
               right: 28,
             ),
             child: Text(
-              'Welcome! Login',
+              'Welcome! Register',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -188,14 +190,15 @@ class _LoginPageState extends State<LoginPage> {
                 primary: const Color(0xFFFF6600), // background
               ),
               onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => const HomePage()));
               },
               icon: const Icon(
                 Icons.lock,
                 size: 17,
               ),
               label: const Text(
-                'Login',
+                'Register',
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -242,7 +245,7 @@ class _LoginPageState extends State<LoginPage> {
                       const Padding(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text(
-                          'Login with Google',
+                          'Register with Google',
                           style:
                               TextStyle(fontSize: 16, color: Color(0xFFFF6600)),
                         ),
@@ -260,7 +263,7 @@ class _LoginPageState extends State<LoginPage> {
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 const Text(
-                  "Don't have an account?",
+                  "Already have an account?",
                   style: TextStyle(
                     fontSize: 16,
                   ),
@@ -272,12 +275,12 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const RegisterPage(),
+                          builder: (context) => const LoginPage(),
                         ),
                       );
                     },
                     child: const Text(
-                      'Sign up',
+                      'Log in',
                       style: TextStyle(
                         color: Color(0xFFFF6600),
                         fontSize: 16,
