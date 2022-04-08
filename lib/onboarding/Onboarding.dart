@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:forhub/auth/Login.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -282,7 +283,41 @@ class ThirdBoard extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 28.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xFFFF6600), // background
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Text(
+                        'Login',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      const Icon(
+                        Icons.arrow_forward,
+                        size: 18,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
