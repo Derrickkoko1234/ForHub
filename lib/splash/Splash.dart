@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:forhub/home/Home.dart';
 import 'dart:async';
 
 import 'package:forhub/splash/ToTheHub.dart';
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const ToTheHubPage(),
+          builder: (context) => const HomePage(),
         ),
       ),
     );
